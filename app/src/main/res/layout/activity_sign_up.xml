@@ -106,6 +106,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="textPassword"
                     android:visibility="visible" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -123,7 +124,7 @@
 
             <Button
                 android:id="@+id/signup_button"
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="#4CB5F9"
@@ -138,7 +139,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="30dp"
+                android:layout_marginEnd="40dp"
                 android:text="Have an account?"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
