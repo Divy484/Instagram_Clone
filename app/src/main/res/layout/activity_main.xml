@@ -37,7 +37,7 @@
         android:layout_marginBottom="8dp"
         android:text="From"
         android:textSize="18sp"
-        android:textColor="@android:color/black"
+        android:textColor="#575756"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView" />
