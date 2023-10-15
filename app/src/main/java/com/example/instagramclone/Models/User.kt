@@ -12,4 +12,11 @@ class User {
         this.username = username
         this.password = password
     }
+
+    constructor(mobileEmail: String?, password: String?) {
+        this.mobileEmail = mobileEmail
+        this.password = password
+    }
+
+
 }
