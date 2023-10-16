@@ -1,12 +1,14 @@
 package com.example.instagramclone.Models
 
 class User {
+    var image : String? = null
     var mobileEmail: String? = null
     var name: String? = null
     var username: String? = null
     var password: String? = null
     constructor()
     constructor(mobileEmail: String?, name: String?, username: String?, password: String?) {
+        this.image = image
         this.mobileEmail = mobileEmail
         this.name = name
         this.username = username
@@ -17,6 +19,4 @@ class User {
         this.mobileEmail = mobileEmail
         this.password = password
     }
-
-
 }
