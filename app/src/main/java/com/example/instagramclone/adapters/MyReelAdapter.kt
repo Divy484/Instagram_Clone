@@ -24,6 +24,9 @@ class MyReelAdapter(var context: Context, var reelList: ArrayList<Reel>): Recycl
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        Glide.with(context).load(reelList.get(position).reelUrl).diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.binding.postImage)
+        Glide.with(context)
+            .load(reelList.get(position).reelUrl)
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
+            .into(holder.binding.postImage);
     }
 }
