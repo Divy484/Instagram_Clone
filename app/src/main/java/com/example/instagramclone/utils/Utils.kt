@@ -1,5 +1,7 @@
 package com.example.instagramclone.utils
 
+import android.app.ProgressDialog
+import android.content.Context
 import android.net.Uri
 import com.google.firebase.storage.FirebaseStorage
 import java.util.UUID
@@ -11,5 +13,22 @@ fun uploadImage(uri: Uri, folderName:String, callback:(String?)->Unit) {
             imageUrl = it.toString()
             callback(imageUrl)
         }
+    }
+}
+
+fun uploadVideo(uri: Uri, folderName:String,progressDialog: ProgressDialog,callback:(String?)->Unit) {
+    var videoUrl:String?=null
+    progressDialog.setTitle("Uploading . . .")
+    progressDialog.show()
+
+    FirebaseStorage.getInstance().getReference(folderName).child(UUID.randomUUID().toString()).putFile(uri).addOnSuccessListener {
+        it.storage.downloadUrl.addOnSuccessListener {
+            videoUrl = it.toString()
+            progressDialog.dismiss()
+            callback(videoUrl)
+        }
+    }.addOnProgressListener {
+        var uploadedValue: Long = it.bytesTransferred/it.totalByteCount
+        progressDialog.setMessage("Uploaded $uploadedValue %")
     }
 }
